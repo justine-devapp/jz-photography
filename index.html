@@ -388,6 +388,90 @@ footer{
   font-size:13px;letter-spacing:3px;color:var(--text-muted);
 }
 .footer-copy{font-size:9px;letter-spacing:2px;text-transform:uppercase;color:var(--text-dim)}
+@media (max-width: 768px){
+
+  nav{
+    padding:18px 20px;
+    flex-direction:column;
+    gap:18px;
+  }
+
+  .nav-links{
+    gap:18px;
+    flex-wrap:wrap;
+    justify-content:center;
+  }
+
+  .hero{
+    grid-template-columns:1fr;
+    height:auto;
+  }
+
+  .hero-left{
+    padding:120px 24px 60px;
+    border-right:none;
+  }
+
+  .hero-title{
+    font-size:52px;
+  }
+
+  .hero-right{
+    grid-template-columns:1fr;
+  }
+
+  .projects-header{
+    padding:40px 20px;
+  }
+
+  .project-view{
+    padding:20px;
+  }
+
+  .proj-intro{
+    display:flex;
+    flex-direction:column;
+    gap:24px;
+  }
+
+  .proj-brand{
+    font-size:42px;
+  }
+
+  .proj-gallery.cols2,
+  .proj-gallery.cols3{
+    grid-template-columns:1fr;
+  }
+
+  .about-grid{
+    grid-template-columns:1fr;
+  }
+
+  .about-content{
+    padding:40px 24px;
+  }
+
+  .contact-page{
+    grid-template-columns:1fr;
+  }
+
+  .contact-left,
+  .contact-right{
+    padding:40px 24px;
+  }
+
+  .contact-big{
+    font-size:52px;
+  }
+
+  footer{
+    padding:24px;
+    flex-direction:column;
+    gap:10px;
+    text-align:center;
+  }
+
+}
 </style>
 </head>
 <body>
