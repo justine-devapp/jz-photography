@@ -97,13 +97,7 @@ nav{
   background:var(--dark3);
   border:0.5px solid rgba(184,152,90,0.06);
 }
-.hero-cell img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  transition:transform .8s ease;
-  filter:brightness(0.96) contrast(1.02);
-}
+.hero-cell img{width:100%;height:100%;object-fit:cover;transition:transform .8s ease}
 .hero-cell:hover img{transform:scale(1.04)}
 .hero-cell-label{
   position:absolute;bottom:14px;left:14px;
@@ -197,14 +191,7 @@ nav{
 .proj-gallery.mixed{}
 
 .gal-item{position:relative;overflow:hidden;background:var(--dark3);cursor:pointer}
-.gal-item img{
-  width:100%;
-  height:100%;
-  object-fit:cover;
-  display:block;
-  transition:transform .6s ease;
-  filter:brightness(0.96) contrast(1.02);
-}
+.gal-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .6s ease}
 .gal-item:hover img{transform:scale(1.03)}
 .gal-item.portrait{aspect-ratio:3/4}
 .gal-item.landscape{aspect-ratio:4/3}
@@ -281,6 +268,9 @@ nav{
   font-size:11px;letter-spacing:0.5px;line-height:2;
   color:var(--text-muted);
 }
+.about-clients{margin-top:40px}
+.client-row{display:flex;gap:10px;flex-wrap:wrap;margin-top:16px}
+.client-chip{
   font-size:8px;letter-spacing:2px;text-transform:uppercase;
   border:0.5px solid rgba(184,152,90,0.25);
   color:rgba(184,152,90,0.55);padding:7px 14px;
@@ -410,6 +400,7 @@ footer{
     <li><a href="#" onclick="showPage('about')" id="nav-about">À propos</a></li>
     <li><a href="#" onclick="showPage('contact')" id="nav-contact">Contact</a></li>
   </ul>
+  <a class="nav-contact" href="#" onclick="showPage('contact')">Parlons de votre projet</a>
 </nav>
 
 <!-- ═══════════════ HOME ═══════════════ -->
@@ -418,7 +409,7 @@ footer{
     <div class="hero-left">
       <div class="hero-eyebrow">Paris · Photographe Produit & Mode</div>
       <h1 class="hero-title">L'image<br>qui <em>vend</em><br>le luxe.</h1>
-      <p class="hero-sub">Photographie éditoriale pour marques de cosmétiques, bijoux et mode. Basée à Paris · Cosmétique · Joaillerie · Éditorial</p>
+      <p class="hero-sub">Photographie éditoriale pour cosmétique, joaillerie et image de mode. Basée à Paris..</p>
       <button class="hero-cta" onclick="showPage('projets')">Voir les projets →</button>
     </div>
     <div class="hero-right">
@@ -431,12 +422,17 @@ footer{
         <div class="hero-cell-label">Bijoux · Macro</div>
       </div>
       <div class="hero-cell">
-        <img src="images/chanel-03.jpg" alt="Chanel" onerror="this.src='images/chanel-01.jpg'">
+        <img src="images/chanel-03.jpg" alt="Chanel">
         <div class="hero-cell-label">Beauté · Éditorial</div>
       </div>
     </div>
   </section>
 
+  <div class="stats">
+    <div class="stat"><div class="stat-n">5+</div><div class="stat-l">Ans de pratique</div></div>
+    <div class="stat"><div class="stat-n">Paris</div><div class="stat-l">Base · Île-de-France</div></div>
+    <div class="stat"><div class="stat-n">3</div><div class="stat-l">Univers · Produit · Mode</div></div>
+    <div class="stat"><div class="stat-n">SASU</div><div class="stat-l">Structure professionnelle</div></div>
   </div>
 
   <footer>
@@ -451,21 +447,24 @@ footer{
     <div class="sec-num">Projets</div>
     <h2 class="sec-title" style="margin-bottom:0">Chaque marque a son<br><em>langage visuel.</em></h2>
     <div class="projects-nav">
-      <button class="proj-tab active" onclick="showProject('ysl',this)">YSL</button>
-      <button class="proj-tab" onclick="showProject('chanel',this)">Chanel</button>
-      <button class="proj-tab" onclick="showProject('lrp',this)">La Roche-Posay</button>
-      <button class="proj-tab" onclick="showProject('bijoux',this)">Bijoux</button>
-      <button class="proj-tab" onclick="showProject('mode',this)">Mode</button>
+<button class="proj-tab active" onclick="showProject('cosmetique',this)">Cosmétique</button>
+<button class="proj-tab" onclick="showProject('bijoux',this)">Joaillerie</button>
+<button class="proj-tab" onclick="showProject('mode',this)">Mode</button>
     </div>
   </div>
 
   <!-- YSL -->
-  <div id="proj-ysl" class="project-view active">
+  <div id="proj-cosmetique" class="project-view active">
     <div class="proj-intro">
       <div class="proj-meta">
-        <div class="proj-brand">YSL</div>
-        <div class="proj-category">Parfum · Luxe</div>
-        <p class="proj-desc">Yves Saint Laurent Libre — une bouteille iconique shootée dans toute sa puissance. Jeu de réflexions, lumières rasantes et mise en scène dramatique pour révéler l'or et le verre en majesté.</p>
+        <div class="proj-brand">Cosmétique & Parfum</div>
+        <div class="proj-category">Beauté · Éditorial produit</div>
+        <p class="proj-desc">Séries éditoriales personnelles inspirées des univers du parfum, du skincare et de la beauté luxe. Travail autour de la lumière, des textures et de la matière..</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Studio</span>
+          <span class="proj-tag">Fond noir</span>
+          <span class="proj-tag">Macro</span>
+          <span class="proj-tag">Réflexion miroir</span>
         </div>
       </div>
       <div class="proj-gallery cols2" style="gap:3px">
@@ -485,16 +484,21 @@ footer{
         <div class="proj-brand">Chanel</div>
         <div class="proj-category">Maquillage · Parfum</div>
         <p class="proj-desc">Rouge Allure et Chance Eau Fraîche — deux univers Chanel explorés. Le rouge iconique mis en scène avec intensité, le flacon rond de Chance sublimé par l'eau et la couleur.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Studio</span>
+          <span class="proj-tag">Éditorial</span>
+          <span class="proj-tag">Fond coloré</span>
+          <span class="proj-tag">Water shot</span>
         </div>
       </div>
       <div class="proj-gallery cols2" style="gap:3px">
-        <div class="gal-item portrait" onclick="openLightbox('chanel',0)"><img src="images/chanel-01.jpg" alt="Chanel rouge fond rose"></div>
-        <div class="gal-item portrait" onclick="openLightbox('chanel',3)"><img src="images/chanel-04.jpg" alt="Chanel Chance eau"></div>
+        <div class="gal-item portrait" onclick="openLightbox('chanel',0)"><img src="images/chanel-03.jpg" alt="Chanel rouge macro"></div>
+        <div class="gal-item portrait" onclick="openLightbox('chanel',1)"><img src="images/chanel-04.jpg" alt="Chanel Chance"></div>
       </div>
     </div>
     <div class="proj-gallery cols3" style="gap:3px">
-      <div class="gal-item landscape" onclick="openLightbox('chanel',1)"><img src="images/chanel-02.jpg" alt="Chanel rouge blanc"></div>
-      <div class="gal-item landscape" onclick="openLightbox('chanel',2)"><img src="images/chanel-03.jpg" alt="Chanel rouge macro"></div>
+      <div class="gal-item landscape" onclick="openLightbox('chanel',2)"><img src="images/chanel-01.jpg" alt="Chanel rouge fond rose"></div>
+      <div class="gal-item landscape" onclick="openLightbox('chanel',3)"><img src="images/chanel-02.jpg" alt="Chanel rouge blanc"></div>
       <div class="gal-item landscape" onclick="openLightbox('chanel',4)"><img src="images/chanel-05.jpg" alt="Chanel Chance macro"></div>
       <div class="gal-item landscape" onclick="openLightbox('chanel',5)"><img src="images/chanel-06.jpg" alt="Chanel Chance eau fraiche"></div>
     </div>
@@ -507,17 +511,21 @@ footer{
         <div class="proj-brand">La Roche-Posay</div>
         <div class="proj-category">Skincare · Cosmétique</div>
         <p class="proj-desc">Les sérums Pure Vitamin C12, Retinol B3 et Mela B3 mis en valeur avec énergie. Mise en scène créative avec les agrumes, pipette en action, et composition produit sur fond sombre pour sublimer les flacons colorés.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Studio</span>
+          <span class="proj-tag">Lifestyle</span>
+          <span class="proj-tag">Fond orange</span>
+          <span class="proj-tag">Action shot</span>
         </div>
       </div>
       <div class="proj-gallery cols2" style="gap:3px">
         <div class="gal-item landscape" onclick="openLightbox('lrp',0)"><img src="images/lrp-01.jpg" alt="LRP flat lay oranges"></div>
-        <div class="gal-item portrait" onclick="openLightbox('lrp',3)"><img src="images/lrp-04.jpg" alt="LRP pipette"></div>
+        <div class="gal-item portrait" onclick="openLightbox('lrp',1)"><img src="images/lrp-02.jpg" alt="LRP pipette"></div>
       </div>
     </div>
-    <div class="proj-gallery cols3" style="gap:3px">
-      <div class="gal-item portrait" onclick="openLightbox('lrp',1)"><img src="images/lrp-02.jpg" alt="LRP fond orange"></div>
-      <div class="gal-item portrait" onclick="openLightbox('lrp',2)"><img src="images/lrp-03.jpg" alt="LRP orange lifestyle"></div>
-      <div class="gal-item portrait" onclick="openLightbox('lrp',5)"><img src="images/lrp-06.jpg" alt="LRP trio miroir"></div>
+    <div class="proj-gallery cols2" style="gap:3px;margin-top:3px">
+      <div class="gal-item portrait" onclick="openLightbox('lrp',0)"><img src="images/lrp-01.jpg" alt="LRP flat lay oranges"></div>
+      <div class="gal-item portrait" onclick="openLightbox('lrp',1)"><img src="images/lrp-02.jpg" alt="LRP pipette"></div>
     </div>
   </div>
 
@@ -528,24 +536,20 @@ footer{
         <div class="proj-brand">Bijoux</div>
         <div class="proj-category">Joaillerie · Macro</div>
         <p class="proj-desc">Bagues rubis, anneaux dorés, créoles pavées — chaque pièce shootée pour révéler ses détails les plus fins. Reflets miroir, mises en scène sur travertin, portés main : autant de langages pour une même précision.</p>
+        <div class="proj-tags">
+          <span class="proj-tag">Macro</span>
+          <span class="proj-tag">Reflet miroir</span>
+          <span class="proj-tag">Porté</span>
+          <span class="proj-tag">Multi-supports</span>
         </div>
       </div>
       <div class="proj-gallery cols2" style="gap:3px">
         <div class="gal-item portrait" onclick="openLightbox('bijoux',0)"><img src="images/bijoux-01.jpeg" alt="Bague rubis reflet"></div>
-        <div class="gal-item portrait" onclick="openLightbox('bijoux',9)"><img src="images/bijoux-10.jpg" alt="Bague noeud noir"></div>
+        <div class="gal-item portrait" onclick="openLightbox('bijoux',1)"><img src="images/bijoux-03.jpeg" alt="Bague noeud noir"></div>
       </div>
     </div>
     <div class="proj-gallery cols3" style="gap:3px">
-      <div class="gal-item portrait" onclick="openLightbox('bijoux',1)"><img src="images/bijoux-02.jpeg" alt="Bague rubis présentoir"></div>
-      <div class="gal-item portrait" onclick="openLightbox('bijoux',2)"><img src="images/bijoux-03.jpeg" alt="Bague rubis boite"></div>
-      <div class="gal-item portrait" onclick="openLightbox('bijoux',3)"><img src="images/bijoux-04.jpg" alt="Bague profil"></div>
-      <div class="gal-item portrait" onclick="openLightbox('bijoux',4)"><img src="images/bijoux-05.jpg" alt="Bague coeur or"></div>
-      <div class="gal-item portrait" onclick="openLightbox('bijoux',5)"><img src="images/bijoux-06.jpg" alt="Bague coeur blanc"></div>
-      <div class="gal-item portrait" onclick="openLightbox('bijoux',6)"><img src="images/bijoux-07.jpg" alt="Bague rubis 2"></div>
-      <div class="gal-item portrait" onclick="openLightbox('bijoux',7)"><img src="images/bijoux-08.jpg" alt="Bague rubis fond blanc"></div>
-      <div class="gal-item landscape" onclick="openLightbox('bijoux',8)"><img src="images/bijoux-09.jpg" alt="Creoles travertin"></div>
-      <div class="gal-item portrait" onclick="openLightbox('bijoux',10)"><img src="images/bijoux-11.jpg" alt="Bague noeud portee macro"></div>
-      <div class="gal-item portrait" onclick="openLightbox('bijoux',11)"><img src="images/bijoux-12.jpg" alt="Bague noeud portee main"></div>
+      <div class="gal-item portrait" onclick="openLightbox('bijoux',2)"><img src="images/bijoux-02.jpeg" alt="Bague portée main"></div>
     </div>
   </div>
 
@@ -558,6 +562,10 @@ footer{
     </div>
   </div>
 
+  <footer>
+    <div class="footer-logo">JZ Photography & Co.</div>
+    <div class="footer-copy">© 2026 · Paris · Tous droits réservés</div>
+  </footer>
 </div>
 
 <!-- ═══════════════ À PROPOS ═══════════════ -->
@@ -592,18 +600,20 @@ footer{
 
       <div class="about-block">
         <div class="about-block-title">Mon univers</div>
-        <p class="about-block-text">Formée à l'exigence du terrain — Fashion Week Paris, Cannes, les défilés Chanel, Dior, Valentino — j'ai développé un œil pour ce qui capte l'attention et ce qui convertit. Je travaille aussi bien en studio qu'en décor naturel, avec une direction artistique construite autour de votre identité de marque.</p>
+        <p class="about-block-text">Je développe une approche centrée sur la lumière, les matières et l’impact visuel. Chaque image est pensée pour créer une perception plus désirable du produit et renforcer l’univers d’une marque.</p>
       </div>
-
-      <div class="about-block">
-      </div>
-
-        </div>
+      
       </div>
     </div>
   </div>
   <footer>
     <div class="footer-logo">JZ Photography & Co.</div>
+    <div class="footer-copy">© 2026 · Paris · Tous droits réservés</div>
+  </footer>
+</div>
+
+<!-- ═══════════════ CONTACT ═══════════════ -->
+<div id="page-contact" class="page">
   <div class="contact-page">
     <div class="contact-left">
       <div class="sec-num">Contact</div>
@@ -619,6 +629,9 @@ footer{
         <div class="contact-info-val">Paris · Île-de-France</div>
       </div>
       <div class="contact-info-block">
+        <div class="contact-info-label">Structure</div>
+        <div class="contact-info-val">SASU · Facturation pro</div>
+      </div>
 
       <div class="contact-socials">
         <a class="contact-social" href="https://instagram.com/jzphotographyco" target="_blank">Instagram</a>
@@ -661,6 +674,12 @@ footer{
   </footer>
 </div>
 
+<!-- LIGHTBOX -->
+<div class="lightbox" id="lightbox" onclick="closeLightboxIfBg(event)">
+  <button class="lb-close" onclick="closeLightbox()">×</button>
+  <button class="lb-prev" onclick="lbNav(-1)">‹</button>
+  <img id="lb-img" src="" alt="">
+  <button class="lb-next" onclick="lbNav(1)">›</button>
 </div>
 
 <script>
@@ -685,8 +704,7 @@ function showProject(id, btn){
 // ── LIGHTBOX ──
 const galleries = {
   ysl:['images/ysl-01.jpg','images/ysl-02.jpg','images/ysl-03.jpg'],
-  chanel:['images/chanel-01.jpg','images/chanel-02.jpg','images/chanel-03.jpg','images/chanel-04.jpg','images/chanel-05.jpg','images/chanel-06.jpg'],
-  burberry:['images/burberry-01.jpg','images/burberry-02.jpg','images/burberry-03.jpg'],
+  chanel:['images/chanel-03.jpg','images/chanel-04.jpg','images/chanel-01.jpg','images/chanel-02.jpg','images/chanel-05.jpg','images/chanel-06.jpg'],
   lrp:['images/lrp-01.jpg','images/lrp-02.jpg'],
   bijoux:['images/bijoux-01.jpeg','images/bijoux-03.jpeg','images/bijoux-02.jpeg']
 };
